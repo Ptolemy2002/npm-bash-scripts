@@ -3,4 +3,4 @@ echo "Switching to the example directory"
 cd ../example
 
 echo "Installing all dependencies"
-npm install --legacy-peer-deps
+npm install
