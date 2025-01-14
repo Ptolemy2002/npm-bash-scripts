@@ -13,5 +13,5 @@ if [ ! -d "../shared/dist" ]; then
 fi
 
 echo "Linking shared dependencies"
-npm link ../shared
+npm link ../shared --save
 echo "Finished linking shared dependencies"
