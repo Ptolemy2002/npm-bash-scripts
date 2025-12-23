@@ -15,6 +15,8 @@ echo "Finished building the project"
 # Copy the whole dist folder to a Windows path if provided
 if [ ! -z "$1" ]; then
     echo "Copying dist to Windows path: $1"
+    # Make all necessary directories in the Windows path
+    mkdir -p "/mnt/c/$1"
     cp -r dist/* "/mnt/c/$1"
     echo "Copy completed"
 fi
