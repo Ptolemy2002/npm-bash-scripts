@@ -17,9 +17,21 @@ if [ ! -z "$1" ]; then
     echo "Copying dist to Windows path: $1"
     # Make all necessary directories in the Windows path
     mkdir -p "/mnt/c/$1"
+
     # Remove all existing files in the Windows path
     rm -rf "/mnt/c/$1/*"
+
+    # Make the dist directory in the Windows path
+    mkdir -p "/mnt/c/$1/dist"
+    
     # Copy all files from dist to the Windows path
-    cp -r dist/* "/mnt/c/$1"
+    cp -r dist/* "/mnt/c/$1/dist"
+
+    # If "manifest.json" exists in current directory, copy it as well
+    if [ -f "manifest.json" ]; then
+        echo "Copying manifest.json to Windows path"
+        cp manifest.json "/mnt/c/$1/manifest.json"
+    fi
+
     echo "Copy completed"
 fi
