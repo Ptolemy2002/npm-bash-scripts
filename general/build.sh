@@ -27,11 +27,5 @@ if [ ! -z "$1" ]; then
     # Copy all files from dist to the Windows path
     cp -r dist/* "/mnt/c/$1/dist"
 
-    # If "manifest.json" exists in current directory, copy it as well
-    if [ -f "manifest.json" ]; then
-        echo "Copying manifest.json to Windows path"
-        cp manifest.json "/mnt/c/$1/manifest.json"
-    fi
-
     echo "Copy completed"
 fi
